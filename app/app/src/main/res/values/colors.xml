@@ -1,0 +1,11 @@
+<resources>
+    <color name="white">#FFFFFF</color>
+
+    <color name="sky_start">#9FDFFF</color>
+    <color name="sky_end">#E9F9FF</color>
+    <color name="pink">#FFC8DE</color>
+    <color name="primary_blue">#4E86FF</color>
+    <color name="deep_blue">#2B59B8</color>
+    <color name="text_dark">#294164</color>
+    <color name="card_white">#FDFEFF</color>
+</resources>

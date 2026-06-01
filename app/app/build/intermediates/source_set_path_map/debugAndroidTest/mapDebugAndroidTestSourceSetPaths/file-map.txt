@@ -1,0 +1,4 @@
+com.trang.kidsenglishai.test.app-androidTest-0 C:\xampp\htdocs\test\DOAN\app\app\build\generated\res\resValues\androidTest\debug
+com.trang.kidsenglishai.test.app-mergeDebugAndroidTestResources-1 C:\xampp\htdocs\test\DOAN\app\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.trang.kidsenglishai.test.app-mergeDebugAndroidTestResources-2 C:\xampp\htdocs\test\DOAN\app\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.trang.kidsenglishai.test.app-debugAndroidTest-3 C:\xampp\htdocs\test\DOAN\app\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
