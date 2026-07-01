@@ -1,0 +1,472 @@
+\section{Môi trường phát triển}
+
+\noindent\textbf{Tổng quan hệ thống:}
+
+Hệ thống được xây dựng theo mô hình Client -- Server, bao gồm 3 thành phần chính:
+
+
+\begin{itemize}
+\item Web Client (Admin \& User): Quản lý dữ liệu và tương tác người dùng trên trình duyệt.
+\item Ứng dụng Android: Hỗ trợ học tiếng Anh cho trẻ em trên thiết bị di động.
+\item Server (API): Xử lý dữ liệu, cung cấp API cho Web và Android.
+\item API Hệ thống
+\item API vocabularies.php được sử dụng để lấy danh sách từ vựng theo chủ đề.
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{goi_api.jpg}
+\caption{Hình ảnh gọi API}
+\end{figure}
+
+Khi gọi API với topic\_id hợp lệ, hệ thống trả về dữ liệu dưới dạng JSON bao gồm id, từ vựng, nghĩa, hình ảnh và ví dụ minh họa.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{json_thanh_cong.jpg}
+\caption{JSON thành công}
+\end{figure}
+
+\begin{itemize}
+\item Dữ liệu này sẽ được ứng dụng Android xử lý và hiển thị lên giao diện học từ vựng cho người dùng.
+\end{itemize}
+
+\subsection{Công cụ phát triển}
+
+\noindent\textbf{a) Android Studio.}
+
+
+Android Studio là môi trường phát triển tích hợp (IDE) chính thức của Google để lập trình ứng dụng Android. Dựa trên phần mềm IntelliJ IDEA, công cụ này cung cấp bộ tính năng mạnh mẽ để xây dựng, gỡ lỗi (debug) và tối ưu hóa ứng dụng trên mọi thiết bị Android, bao gồm trình chỉnh sửa mã thông minh và giả lập.
+
+
+\noindent\textbf{b) Visual Studio Code}
+
+
+Đây là một công cụ chỉnh sửa mã nguồn miễn phí và có mã nguồn mở do Microsoft phát triển. Phần mềm hỗ trợ nhiều tính năng phục vụ lập trình như tô màu cú pháp, gợi ý mã tự động IntelliSense và khả năng kết nối với các công cụ quản lý mã nguồn như Git, giúp quá trình phát triển ứng dụng trở nên thuận tiện hơn.
+
+
+\noindent\textbf{c) Xampp}
+
+
+Là một gói phần mềm mã nguồn mở cho phép dễ dàng cài đặt và triển khai ứng dụng web trên môi trường máy chủ cục bộ. Nó bao gồm Apache, MySQL, PHP và Perl, tạo ra một môi trường phát triển đa năng và dễ sử dụng. trong project này chủ dùng xampp để chạy MySQL.
+
+
+\noindent\textbf{d) Microsoft Edge}
+
+
+Là trình duyệt web hiện đại được xây dựng trên nền tảng Chromium, Microsoft Edge kết hợp hoàn hảo giữa tốc độ xử lý mạnh mẽ và khả năng tương thích tối ưu với các tiêu chuẩn web mới nhất. Nhờ sử dụng chung nhân với Chrome, trình duyệt này cung cấp bộ DevTools chuyên sâu, hỗ trợ toàn diện cho việc gỡ lỗi (debug), tối ưu hóa hiệu năng và kiểm tra giao diện đa thiết bị.
+
+
+\subsection{Công nghệ sử dụng}
+
+\noindent\textbf{a) App Android}
+
+
+- Java: Ngôn ngữ phát triển ứng dụng Android.
+
+
+- Android SDK: Công cụ build và chạy ứng dụng.
+
+
+- MVVM: Kiến trúc tách biệt giao diện và xử lý dữ liệu.
+
+
+- XML: Thiết kế giao diện người dùng.
+
+
+- Retrofit/API: Giao tiếp với server PHP.
+
+
+- LiveData \& ViewModel: Quản lý dữ liệu theo vòng đời.
+
+
+- Data Binding: Liên kết dữ liệu với giao diện.
+
+
+- Glide/Picasso: Hiển thị hình ảnh từ server.
+
+
+- Gemini API: Xây dựng chatbot AI.
+
+
+- Speech API: Hỗ trợ luyện phát âm.
+
+
+\noindent\textbf{b) Web client (User và Admin):}
+
+
+\begin{itemize}
+\item HTML5: Dùng để xây dựng cấu trúc các trang giao diện người dùng và trang quản trị.
+\item CSS3: Dùng để thiết kế giao diện, màu sắc, bố cục, hiệu ứng hiển thị cho website.
+\end{itemize}
+
+JavaScript: Dùng để xử lý các thao tác phía client như tìm kiếm, kiểm tra form, hiệu ứng giao diện và tương tác người dùng.
+
+
+\begin{itemize}
+\item PHP: Ngôn ngữ chính dùng để xây dựng chức năng cho hệ thống website.
+\item MVC: Mô hình tổ chức mã nguồn gồm Model, View, Controller giúp project dễ quản lý, dễ bảo trì và mở rộng.
+\end{itemize}
+
+MySQL: Hệ quản trị cơ sở dữ liệu dùng để lưu trữ tài khoản, chủ đề học, từ vựng, câu hỏi quiz, kết quả học tập và lịch sử luyện nói.
+
+
+Bootstrap/CSS tùy chỉnh: Dùng để xây dựng giao diện responsive, thân thiện với người dùng và phù hợp với ứng dụng học tiếng Anh cho trẻ em.
+
+
+\begin{itemize}
+\item XAMPP: Môi trường chạy project trên localhost, bao gồm Apache và MySQL.
+\end{itemize}
+
+\noindent\textbf{c) Server}
+
+
+- PHP: Ngôn ngữ xây dựng hệ thống backend.
+
+
+- RESTful API: Cung cấp dữ liệu cho Web và Android.
+
+
+- MySQL: Lưu trữ dữ liệu hệ thống.
+
+
+- JSON: Định dạng trao đổi dữ liệu.
+
+
+- Apache (XAMPP): Môi trường chạy server.
+
+
+- PDO/MySQLi: Kết nối và thao tác cơ sở dữ liệu.
+
+
+- File Upload: Lưu trữ hình ảnh trong server\_api/uploads.
+
+
+\section{Thiết lập dự án}
+
+\subsection{Cấu trúc dự án}
+
+\noindent\textbf{a) App Android.}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{cau_truc_thu_muc_app_android.jpg}
+\caption{Cấu trúc thư mục App Android}
+\end{figure}
+
+\noindent\textbf{b) Web Client (user và admin)}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{cau_truc_thu_muc_web_client.jpg}
+\caption{Cấu trúc thư mục Web Client}
+\end{figure}
+
+\noindent\textbf{c) Server}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{cau_truc_thu_muc_server_api.jpg}
+\caption{Cấu trúc thư mục Server API}
+\end{figure}
+
+\noindent\textbf{d) Database}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{cau_truc_du_lieu_he_thong.jpg}
+\caption{Cấu trúc dữ liệu của hệ thống}
+\end{figure}
+
+\subsection{Hoạt động tổng thể của hệ thống}
+
+Hệ thống hoạt động theo mô hình Client -- Server. Người dùng sử dụng ứng dụng Android để tương tác với hệ thống. Khi thực hiện các chức năng như đăng nhập, học từ vựng, chat AI hoặc luyện phát âm, ứng dụng sẽ gửi yêu cầu (request) đến API Server thông qua giao thức HTTP.
+
+
+API Server (được xây dựng bằng PHP) sẽ tiếp nhận yêu cầu, xử lý logic nghiệp vụ và truy vấn dữ liệu từ cơ sở dữ liệu MySQL. Sau khi xử lý xong, server sẽ trả về dữ liệu dưới dạng JSON cho ứng dụng Android.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{kien_truc_tong_the_he_thong.jpg}
+\caption{Hình ảnh kiến trúc tổng thể của hệ thống}
+\end{figure}
+
+Ứng dụng Android nhận dữ liệu, xử lý và hiển thị kết quả cho người dùng dưới dạng giao diện trực quan, thân thiện với trẻ em.
+
+
+Luồng hoạt động này đảm bảo hệ thống hoạt động linh hoạt, dễ mở rộng và tách biệt rõ ràng giữa giao diện người dùng, xử lý nghiệp vụ và dữ liệu.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_trien_khai_he_thong.jpg}
+\caption{Sơ đồ triển khai hệ thống}
+\end{figure}
+
+\section{Kết quả thu được từ dự án}
+
+\subsection{App Android ``Tiếng Anh Cho Bé''}
+
+\textbf{a, Màn hình Trang chủ}
+
+\begin{itemize}
+	\item Mô tả:
+	\begin{itemize}
+		\item Giao diện được thiết kế thân thiện, trực quan và phù hợp với trẻ em từ 6 đến 10 tuổi.
+		\item Cho phép người dùng truy cập nhanh các chức năng học theo chủ đề, Chatbot AI, dịch hình ảnh, luyện nói và trò chơi Quiz.
+		\item Hiển thị thành tích học tập và lịch sử luyện tập của người dùng.
+		\item Người dùng có thể lựa chọn chức năng mong muốn để chuyển sang màn hình tương ứng.
+	\end{itemize}
+\end{itemize}
+
+\begin{center}
+	\includegraphics[width=0.42\textwidth]{man_hinh_trang_chu_app_tieng_anh_cho_be.jpg}
+	\captionof{figure}{Màn hình trang chủ App ``Tiếng Anh cho bé''}
+\end{center}
+
+\textbf{b, Màn hình Đăng ký}
+
+\begin{itemize}
+	\item Mô tả:
+	\begin{itemize}
+		\item Màn hình đăng ký cho phép người dùng tạo tài khoản mới bằng cách nhập tên của bé, tuổi, email phụ huynh và mật khẩu.
+		\item Người dùng nhấn nút tạo tài khoản để đăng ký hoặc chuyển sang màn hình đăng nhập nếu đã có tài khoản.
+		\item Giao diện được thiết kế tươi sáng, sinh động, phù hợp với trẻ em.
+	\end{itemize}
+\end{itemize}
+
+\begin{center}
+	\includegraphics[width=0.42\textwidth]{trang_dang_ky_app_hoc_tieng_anh_cho_be.jpg}
+	\captionof{figure}{Trang Đăng ký app ``Học Tiếng Anh Cho Bé''}
+\end{center}
+
+\textbf{c, Màn hình Đăng nhập}
+
+\begin{itemize}
+	\item Mô tả:
+	\begin{itemize}
+		\item Người dùng nhập email phụ huynh và mật khẩu để đăng nhập vào ứng dụng.
+		\item Màn hình có chức năng quên mật khẩu và liên kết đăng ký tài khoản mới nếu người dùng chưa có tài khoản.
+		\item Giao diện đơn giản, dễ thao tác và phù hợp với đối tượng sử dụng.
+	\end{itemize}
+\end{itemize}
+
+\begin{center}
+	\includegraphics[width=0.42\textwidth]{trang_dang_nhap_app_hoc_tieng_anh_cho_be.jpg}
+	\captionof{figure}{Trang Đăng nhập app ``Học Tiếng Anh Cho Bé''}
+\end{center}
+
+\textbf{d, Màn hình Chọn chủ đề học}
+
+\begin{itemize}
+	\item Mô tả:
+	\begin{itemize}
+		\item Màn hình hiển thị danh sách các chủ đề học tiếng Anh đã được lưu trong cơ sở dữ liệu.
+		\item Mỗi chủ đề có hình ảnh minh họa trực quan và nút truy cập để bắt đầu bài học.
+		\item Giao diện dễ nhìn, màu sắc sinh động, giúp trẻ dễ dàng lựa chọn nội dung học tập.
+	\end{itemize}
+\end{itemize}
+
+\begin{center}
+	\includegraphics[width=0.42\textwidth]{trang_chon_chu_de_hoc_app_hoc_tieng_anh_cho_be.jpg}
+	\captionof{figure}{Trang Chọn chủ đề học app ``Học Tiếng Anh Cho Bé''}
+\end{center}
+
+\textbf{e, Trang Chat AI}
+
+\begin{itemize}
+	\item Mô tả:
+	\begin{itemize}
+		\item Chức năng Chatbot AI cho phép người dùng đặt câu hỏi bằng tiếng Anh hoặc tiếng Việt.
+		\item Khi người dùng nhập nội dung và gửi câu hỏi, hệ thống sẽ phản hồi theo dạng hội thoại.
+		\item Giao diện trực quan, tươi sáng, hỗ trợ trẻ luyện kỹ năng giao tiếp và tương tác với AI.
+	\end{itemize}
+\end{itemize}
+
+\begin{center}
+	\includegraphics[width=0.42\textwidth]{trang_chat_ai_app_hoc_tieng_anh_cho_be.jpg}
+	\captionof{figure}{Trang Chat AI app ``Học Tiếng Anh Cho Bé''}
+\end{center}
+
+\textbf{f, Trang Chụp ảnh dịch}
+
+\begin{itemize}
+	\item Mô tả:
+	\begin{itemize}
+		\item Người dùng có thể chụp ảnh chứa nội dung tiếng Anh để hệ thống nhận diện văn bản.
+		\item Ứng dụng hiển thị văn bản nhận diện được trong phần Detected Text và hiển thị nghĩa tiếng Việt trong phần Vietnamese Meaning.
+		\item Giao diện có nút chụp ảnh và nút đọc lại để người dùng thực hiện nhận diện, dịch lại nội dung khi cần.
+	\end{itemize}
+\end{itemize}
+
+\begin{center}
+	\includegraphics[width=0.42\textwidth]{trang_chup_anh_dich_app_hoc_tieng_anh_cho_be.jpg}
+	\captionof{figure}{Trang Chụp ảnh dịch app ``Học Tiếng Anh Cho Bé''}
+\end{center}
+
+\textbf{g, Trang Luyện nói}
+
+\begin{itemize}
+	\item Mô tả:
+	\begin{itemize}
+		\item Người dùng nhấn vào biểu tượng micro và đọc từ hiển thị trên màn hình để luyện phát âm.
+		\item Kết quả phát âm được hệ thống phân tích và hiển thị trực tiếp trên giao diện.
+		\item Người dùng có thể nghe lại âm thanh mẫu để so sánh và luyện phát âm chính xác hơn.
+	\end{itemize}
+\end{itemize}
+
+\begin{center}
+	\includegraphics[width=0.42\textwidth]{trang_luyen_noi_app_hoc_tieng_anh_cho_be.jpg}
+	\captionof{figure}{Trang Luyện nói app ``Học Tiếng Anh Cho Bé''}
+\end{center}
+
+\textbf{h, Trang Xem thành tích}
+
+\begin{itemize}
+	\item Mô tả:
+	\begin{itemize}
+		\item Màn hình hiển thị số sao, huy hiệu và chuỗi học liên tiếp của người dùng.
+		\item Hệ thống liệt kê lịch sử luyện tập, điểm số và các nội dung đã học.
+		\item Giao diện có biểu tượng cúp vàng, giúp người dùng theo dõi tiến độ học tập một cách trực quan.
+	\end{itemize}
+\end{itemize}
+
+\begin{center}
+	\includegraphics[width=0.42\textwidth]{trang_xem_thanh_tich_app_hoc_tieng_anh_cho_be.jpg}
+	\captionof{figure}{Trang Xem thành tích app ``Học Tiếng Anh Cho Bé''}
+\end{center}
+
+\textbf{i, Trang Game Quiz}
+
+\begin{itemize}
+	\item Mô tả:
+	\begin{itemize}
+		\item Màn hình hiển thị câu hỏi trắc nghiệm với bốn đáp án để người dùng lựa chọn.
+		\item Điểm số hiện tại được hiển thị ngay bên dưới câu hỏi.
+		\item Giao diện sinh động, trực quan, giúp người dùng vừa học vừa chơi, tăng khả năng ghi nhớ từ vựng.
+	\end{itemize}
+\end{itemize}
+
+\begin{center}
+	\includegraphics[width=0.42\textwidth]{trang_game_quiz_app_hoc_tieng_anh_cho_be.jpg}
+	\captionof{figure}{Trang Game Quiz app ``Học Tiếng Anh Cho Bé''}
+\end{center}
+
+\textbf{k, Trang Xem thông tin tài khoản}
+
+\begin{itemize}
+	\item Mô tả:
+	\begin{itemize}
+		\item Màn hình hiển thị thông tin hồ sơ của người dùng hiện tại.
+		\item Người dùng có thể sửa thông tin tài khoản, đăng xuất hoặc đóng màn hình thông tin tài khoản.
+		\item Giao diện trực quan, giúp phụ huynh dễ dàng xem và quản lý tài khoản của trẻ.
+	\end{itemize}
+\end{itemize}
+
+\begin{center}
+	\includegraphics[width=0.42\textwidth]{trang_xem_tai_khoan_app_hoc_tieng_anh_cho_be.jpg}
+	\captionof{figure}{Trang Xem tài khoản app ``Học Tiếng Anh Cho Bé''}
+\end{center}
+
+\subsection{Web Client ``Tiếng Anh Cho Bé''}
+
+\textbf{Admin Web}
+
+\textbf{a, Trang Đăng nhập}
+
+\begin{center}
+	\includegraphics[width=0.85\textwidth]{trang_dang_nhap_admin.jpg}
+	\captionof{figure}{Trang đăng nhập vào admin}
+\end{center}
+
+\textbf{b, Các trang còn lại}
+
+Với quyền admin, hệ thống cho phép quản lý toàn bộ nội dung gồm: chủ đề học, từ vựng, câu hỏi quiz, người dùng, kết quả quiz, lịch sử luyện nói và thành tích. Với mỗi nội dung quản lý, admin có thể thực hiện các chức năng thêm, sửa, xóa và tìm kiếm dữ liệu tương ứng.
+
+\begin{center}
+	\includegraphics[width=0.85\textwidth]{cac_trang_con_lai_web_admin.jpg}
+	\captionof{figure}{Các trang còn lại của web admin}
+\end{center}
+
+\textbf{User Web}
+
+\textbf{a, Trang Đăng nhập}
+
+\begin{itemize}
+	\item Người dùng nhập email và mật khẩu để đăng nhập vào hệ thống.
+	\item Có nút đăng nhập để xác thực thông tin và liên kết đăng ký nếu chưa có tài khoản.
+	\item Giao diện đơn giản, trực quan và dễ sử dụng.
+\end{itemize}
+
+\begin{center}
+	\includegraphics[width=0.85\textwidth]{trang_dang_nhap_web_user.jpg}
+	\captionof{figure}{Trang Đăng nhập web user}
+\end{center}
+
+\textbf{b, Trang Chọn chủ đề học}
+
+\begin{itemize}
+	\item Màn hình liệt kê các chủ đề học tiếng Anh.
+	\item Mỗi chủ đề có hình minh họa trực quan, sinh động và dễ nhận biết.
+	\item Người dùng chọn chủ đề mong muốn để bắt đầu học từ vựng.
+\end{itemize}
+
+\begin{center}
+	\includegraphics[width=0.85\textwidth]{trang_hoc_tu_vung_web_user.jpg}
+	\captionof{figure}{Trang Học từ vựng web user}
+\end{center}
+
+\textbf{c, Trang Game Quiz}
+
+\begin{itemize}
+	\item Màn hình hiển thị câu hỏi trắc nghiệm.
+	\item Có bốn lựa chọn A, B, C, D để người dùng chọn đáp án đúng.
+	\item Sau khi hoàn thành bài quiz, hệ thống hiển thị điểm số của người dùng.
+\end{itemize}
+
+\begin{center}
+	\includegraphics[width=0.85\textwidth]{trang_game_quiz_web_user.jpg}
+	\captionof{figure}{Trang Game quiz web user}
+\end{center}
+
+\textbf{d, Trang Quản lý tài khoản cá nhân}
+
+\begin{itemize}
+	\item Màn hình hiển thị thông tin tài khoản của người dùng.
+	\item Hệ thống lưu lại lịch sử luyện nói và lịch sử làm quiz.
+	\item Có nút đăng xuất để người dùng thoát khỏi tài khoản.
+\end{itemize}
+
+\begin{center}
+	\includegraphics[width=0.85\textwidth]{trang_tai_khoan_ca_nhan_web_user.jpg}
+	\captionof{figure}{Trang Tài khoản cá nhân web user}
+\end{center}
+
+\subsection{Hosting}
+
+Để triển khai Web Client và API lên môi trường trực tuyến, em đã đăng ký tài khoản hosting và tên miền \textit{tienganhchobe.online}.
+
+\begin{center}
+	\includegraphics[width=0.85\textwidth]{dashboard_domain_tienganhchobe_online.jpg}
+	\captionof{figure}{Trang dashboard domain tienganhchobe.online}
+\end{center}
+
+Sau khi đăng ký hosting, em tiến hành upload cơ sở dữ liệu và các thư mục của dự án lên hosting để hệ thống có thể hoạt động trực tuyến.
+
+\begin{center}
+	\includegraphics[width=0.85\textwidth]{database_hosting.jpg}
+	\captionof{figure}{Database hosting}
+\end{center}
+
+Em tạo tài khoản hosting, sau đó đẩy các thư mục \textit{server\_api} và \textit{webClient} lên máy chủ để hệ thống có thể chạy online và kết nối trực tiếp với ứng dụng Android.
+
+\begin{center}
+	\includegraphics[width=0.85\textwidth]{thu_muc_du_an_trong_hosting.jpg}
+	\captionof{figure}{Thư mục dự án trong hosting}
+\end{center}

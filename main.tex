@@ -1,0 +1,250 @@
+
+\pdfminorversion=7
+\documentclass[a4paper,12pt,oneside]{report}
+
+\usepackage[utf8]{vietnam}
+\usepackage{mathptmx}
+\usepackage[fontsize=13pt]{fontsize}
+\usepackage[top=2cm,bottom=2cm,left=3cm,right=2cm,headheight=15pt]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{graphicx}
+\graphicspath{{tai_nguyen/}}
+\usepackage{subfiles}
+\usepackage{fancyhdr}
+\usepackage{emptypage}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+
+\setlist[itemize,1]{
+	label=\textbullet,
+	leftmargin=1.2cm,
+	itemsep=0.25em,
+	topsep=0.3em
+}
+
+\setlist[itemize,2]{
+	label=\textbullet,
+	leftmargin=1cm,
+	itemsep=0.2em
+}
+
+\setlist[itemize,3]{
+	label=\textbullet,
+	leftmargin=0.8cm,
+	itemsep=0.15em
+}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\newcolumntype{U}{>{\bfseries\raggedright\arraybackslash}p{3.6cm}}
+\newcolumntype{V}{>{\raggedright\arraybackslash}X}
+
+
+\newcommand{\ucstep}[1]{#1\par}
+
+
+\usepackage{array}
+\usepackage{pdflscape}
+\usepackage{url}
+\usepackage{longtable}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{makecell}
+\usepackage{float}
+\usepackage[font={small,it},labelfont={bf},justification=centering,labelsep=colon,hypcap=false]{caption}
+\usepackage{multirow}
+\usepackage{sectsty}
+\usepackage{pdfpages}
+\usepackage{comment}
+\usepackage{fancybox}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{indentfirst}
+% Dinh dang doan van giong bao cao Word: thut dau dong, khong cach doan lon
+\usepackage[skip=0pt,indent=1cm]{parskip}
+\usepackage{fancyvrb}
+\usepackage{tocloft}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsubsecleader}{\cftdotfill{\cftdotsep}}
+\usepackage{xcolor}
+
+\usepackage[colorlinks=false,pdfborder={0 0 0},linkcolor=black]{hyperref}
+
+\renewcommand{\contentsname}{MỤC LỤC}
+\renewcommand{\listfigurename}{DANH MỤC HÌNH ẢNH}
+\renewcommand{\listtablename}{DANH MỤC BẢNG BIỂU}
+\renewcommand{\bibname}{TÀI LIỆU THAM KHẢO}
+\renewcommand{\figurename}{Hình}
+\renewcommand{\tablename}{Bảng}
+
+\setstretch{1.25}
+\setlist[itemize,enumerate]{before=\setstretch{1.25},itemsep=0pt,parsep=0pt,partopsep=0pt}
+
+\titlelabel{\thetitle.\quad}
+\titleformat{\chapter}[display]{\fontsize{16pt}{16pt}\bfseries\centering}{\MakeUppercase{\chaptertitlename}\ \thechapter}{5pt}{}
+\titlespacing*{\chapter}{0pt}{0pt}{4pt}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\sectionfont{\fontsize{13}{15}\selectfont\bfseries}
+\subsectionfont{\fontsize{13}{15}\selectfont\bfseries}
+\subsubsectionfont{\fontsize{13}{15}\selectfont\itshape}
+\titlespacing*{\section}{0pt}{6pt plus 1pt minus 1pt}{3pt}
+\titlespacing*{\subsection}{0pt}{5pt plus 1pt minus 1pt}{2pt}
+\titlespacing*{\subsubsection}{0pt}{4pt plus 1pt minus 1pt}{2pt}
+
+\renewcommand\theadfont{\bfseries}
+\fvset{tabsize=4,frame=single}
+\floatname{algorithm}{Thuật toán}
+\renewcommand{\algorithmicrequire}{\textbf{Đầu vào:}}
+\renewcommand{\algorithmicensure}{\textbf{Đầu ra:}}
+
+\title{Xây dựng ứng dụng học tiếng Anh cho trẻ có tích hợp AI hỗ trợ luyện phát âm}
+\author{Hạng A Tráng}
+
+\pagestyle{fancy}
+\fancyhf{}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\footskip}{22pt}
+\fancypagestyle{plain}{\fancyhf{}\cfoot{\thepage}\renewcommand{\headrulewidth}{0pt}\renewcommand{\footrulewidth}{0pt}}
+
+\newcommand{\mychapter}[2]{\setcounter{chapter}{#1}\setcounter{section}{0}\chapter*{#2}}
+
+\cftsetindents{table}{0em}{6em}
+\cftsetindents{figure}{0em}{6em}
+\renewcommand\cfttabpresnum{Bảng }
+\renewcommand{\cftfigpresnum}{Hình }
+\renewcommand{\cfttabaftersnum}{.}
+\renewcommand{\cftfigaftersnum}{.}
+\renewcommand{\cfttoctitlefont}{\hfill\large\bfseries\MakeUppercase}
+\renewcommand{\cftaftertoctitle}{\hfill}
+\renewcommand{\cftlottitlefont}{\hfill\large\bfseries\MakeUppercase}
+\renewcommand{\cftafterlottitle}{\hfill}
+\renewcommand{\cftloftitlefont}{\hfill\large\bfseries\MakeUppercase}
+\renewcommand{\cftafterloftitle}{\hfill}
+\setlength{\cftbeforetoctitleskip}{0em}
+\setlength{\cftaftertoctitleskip}{2em}
+\setlength{\cftbeforelottitleskip}{0em}
+\setlength{\cftbeforeloftitleskip}{0em}
+\renewcommand{\cftsecaftersnum}{.}
+\renewcommand{\cftsubsecaftersnum}{.}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+\subfile{bia/bia_ngoai}
+\subfile{bia/bia_trong}
+\hypersetup{pageanchor=true}
+
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{MỤC LỤC}
+\tableofcontents
+
+\clearpage
+\renewcommand{\listfigurename}{DANH MỤC HÌNH ẢNH}
+\phantomsection
+\addcontentsline{toc}{chapter}{DANH MỤC HÌNH ẢNH}
+\begingroup
+\setlength{\cftbeforefigskip}{0pt}
+\renewcommand{\baselinestretch}{0.95}\normalsize
+\listoffigures
+\endgroup
+
+\clearpage
+\renewcommand{\listtablename}{DANH MỤC BẢNG BIỂU}
+\phantomsection
+\addcontentsline{toc}{chapter}{DANH MỤC BẢNG BIỂU}
+\listoftables
+
+
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{DANH MỤC CÁC TỪ VIẾT TẮT VÀ GIẢI THÍCH CÁC THUẬT NGỮ}
+\subfile{chuong/viet_tat}
+\clearpage
+\chapter*{LỜI CAM ĐOAN}
+\phantomsection
+\addcontentsline{toc}{chapter}{LỜI CAM ĐOAN}
+\subfile{chuong/loi_cam_doan}
+
+\clearpage
+\chapter*{LỜI CẢM ƠN}
+\phantomsection
+\addcontentsline{toc}{chapter}{LỜI CẢM ƠN}
+\subfile{chuong/loi_cam_on}
+
+\clearpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\chapter*{LỜI MỞ ĐẦU}
+\phantomsection
+\addcontentsline{toc}{chapter}{LỜI MỞ ĐẦU}
+\subfile{chuong/mo_dau}
+
+\clearpage
+\setcounter{table}{0}
+\setcounter{figure}{0}
+\mychapter{1}{CHƯƠNG 1. CƠ SỞ LÝ THUYẾT}
+\phantomsection
+\addcontentsline{toc}{chapter}{CHƯƠNG 1. CƠ SỞ LÝ THUYẾT}
+\subfile{chuong/chuong_1}
+
+\clearpage
+\setcounter{table}{0}
+\setcounter{figure}{0}
+\mychapter{2}{CHƯƠNG 2. KHẢO SÁT VÀ PHÂN TÍCH HỆ THỐNG}
+\phantomsection
+\addcontentsline{toc}{chapter}{CHƯƠNG 2. KHẢO SÁT VÀ PHÂN TÍCH HỆ THỐNG}
+\subfile{chuong/chuong_2}
+
+\clearpage
+\setcounter{table}{0}
+\setcounter{figure}{0}
+\mychapter{3}{CHƯƠNG 3. THIẾT KẾ HỆ THỐNG}
+\phantomsection
+\addcontentsline{toc}{chapter}{CHƯƠNG 3. THIẾT KẾ HỆ THỐNG}
+\subfile{chuong/chuong_3}
+
+\clearpage
+\setcounter{table}{0}
+\setcounter{figure}{0}
+\mychapter{4}{CHƯƠNG 4. TRIỂN KHAI VÀ CÀI ĐẶT CHƯƠNG TRÌNH}
+\phantomsection
+\addcontentsline{toc}{chapter}{CHƯƠNG 4. TRIỂN KHAI VÀ CÀI ĐẶT CHƯƠNG TRÌNH}
+\subfile{chuong/chuong_4}
+
+\clearpage
+\chapter*{KẾT LUẬN}
+\phantomsection
+\addcontentsline{toc}{chapter}{KẾT LUẬN}
+\subfile{chuong/ket_luan}
+
+\clearpage
+\chapter*{TÀI LIỆU THAM KHẢO}
+\phantomsection
+\addcontentsline{toc}{chapter}{TÀI LIỆU THAM KHẢO}
+\subfile{chuong/tai_lieu_tham_khao}
+
+\clearpage
+\chapter*{NHẬN XÉT CỦA GIẢNG VIÊN HƯỚNG DẪN}
+\phantomsection
+\addcontentsline{toc}{chapter}{NHẬN XÉT CỦA GIẢNG VIÊN HƯỚNG DẪN}
+\subfile{chuong/nhan_xet_gvhd}
+
+\clearpage
+\subfile{chuong/loi_cam_doan_turnitin}
+
+
+
+\end{document}

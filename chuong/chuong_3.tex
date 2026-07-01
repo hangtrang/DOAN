@@ -1,0 +1,1190 @@
+\section{App Android}
+
+\subsection{Biểu đồ Use case tổng quát}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_uscase_tong_quat.jpg}
+\caption{Biểu đồ use case tổng quát App Android}
+\end{figure}
+
+\subsection{Biểu đồ trình tự}
+
+\noindent\textbf{a) Biểu đồ trình tự cho Đăng ký}
+
+
+\noindent\textbf{Mô tả:}
+
+\begin{table}[H]
+	\centering
+	\caption{Bảng mô tả use case Đăng nhập cho app Android}
+\renewcommand{\arraystretch}{1.25}
+	
+	\begin{tabularx}{\textwidth}{|L{3.5cm}|Y|}
+		\hline
+		\multicolumn{2}{|l|}{\textbf{Tên Use Case: Đăng Ký}} \\
+		\hline
+		
+		\textbf{Mục đích:} &
+		Đăng ký tài khoản \\
+		\hline
+		
+		\textbf{Tác nhân:} &
+		Bé (6 -- 10 tuổi) \\
+		\hline
+		
+		\textbf{Điều kiện trước:} &
+		Truy cập vào trang đăng ký của hệ thống thành công \\
+		\hline
+		
+		\textbf{Điều kiện sau:} &
+		Đã mở ứng dụng thành công \\
+		\hline
+		
+		\textbf{Luồng sự kiện chính:} &
+		\begin{minipage}[t]{\linewidth}
+			1. Người dùng mở màn hình đăng ký.
+			
+			2. Hệ thống hiển thị form đăng ký.
+			
+			3. Người dùng nhập tên bé, tuổi, email phụ huynh và mật khẩu.
+			
+			4. Người dùng nhấn nút Đăng ký.
+			
+			5. Hệ thống kiểm tra dữ liệu nhập vào.
+			
+			6. Nếu dữ liệu hợp lệ, hệ thống lưu tài khoản vào SQLite.
+			
+			7. Hệ thống thông báo đăng ký thành công.
+			
+			8. Hệ thống chuyển sang màn hình đăng nhập.
+		\end{minipage}
+		\\
+		\hline
+		
+		\textbf{Luồng sự kiện phụ:} &
+		\begin{minipage}[t]{\linewidth}
+			4.1. Nếu bỏ trống thông tin, hệ thống báo không được bỏ trống.
+			
+			4.2. Nếu tuổi không nằm trong khoảng 6 đến 10, hệ thống báo tuổi không hợp lệ.
+			
+			4.3. Nếu email sai định dạng hệ thống sẽ báo lỗi.
+			
+			4.4. Nếu mật khẩu dưới 6 ký tự hoặc thiếu chữ số, ký tự đặc biệt, số, hệ thống sẽ báo lỗi.
+			
+			5.1. Nếu email tồn tại, hệ thống báo tài khoản đã được đăng ký.
+		\end{minipage}
+		\\
+		\hline
+	\end{tabularx}
+\end{table}
+
+\noindent\textbf{Sơ đồ:}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_trinh_tu_dang_ky.jpg}
+\caption{Sơ đồ trình tự cho đăng ký}
+\end{figure}
+
+\noindent\textbf{b) Biểu đồ trình tự: Đăng nhập}
+
+
+\noindent\textbf{Mô tả:}
+
+\begin{table}[H]
+\centering
+\caption{Bảng mô tả Đăng nhập app Android}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{|L{3.5cm}|Y|}
+\hline
+\multicolumn{2}{|l|}{\textbf{Tên Use Case: Đăng nhập}} \\
+\hline
+\textbf{Mục đích:} & Đăng nhập vào hệ thống \\
+\hline
+\textbf{Tác nhân:} & Bé (6 -- 10 tuổi) \\
+\hline
+\textbf{Điều kiện trước:} & Truy cập vào trang đăng nhập của hệ thống \\
+\hline
+\textbf{Điều kiện sau:} & Đăng nhập thành công \\
+\hline
+\textbf{Luồng sự kiện chính:} &
+\begin{minipage}[t]{\linewidth}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\ucstep{1. Người dùng mở màn hình đăng nhập.}
+\ucstep{2. Hệ thống hiển thị ô nhập email và mật khẩu.}
+\ucstep{3. Người dùng nhập email và mật khẩu.}
+\ucstep{4. Người dùng nhấn nút Đăng nhập.}
+\ucstep{5. Hệ thống kiểm tra tài khoản trong SQLite.}
+\ucstep{6. Nếu thông tin đúng, hệ thống lưu phiên đăng nhập.}
+\ucstep{7. Hệ thống chuyển sang trang chủ.}
+\end{minipage}
+\\
+\hline
+\textbf{Luồng sự kiện phụ:} &
+\begin{minipage}[t]{\linewidth}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\ucstep{4. 1. Nếu bỏ trống email hoặc mật khẩu, hệ thống yêu cầu nhập đủ thông tin.}
+\ucstep{6. 1. Nếu tài khoản không tồn tại, hệ thống báo lỗi.}
+\ucstep{6. 2. Nếu mật khẩu sai, hệ thống báo đăng nhập thất bại.}
+\end{minipage}
+\\
+\hline
+\end{tabularx}
+\end{table}
+
+\noindent\textbf{Biểu đồ:}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_trinh_tu_dang_nhap.jpg}
+\caption{Sơ đồ trình tự cho đăng nhập}
+\end{figure}
+
+\noindent\textbf{c) Biểu đồ trình tự cho: Chọn chủ đề học}
+
+
+\noindent\textbf{Mô tả:}
+
+\begin{table}[H]
+\centering
+\caption{Bảng mô tả Chọn chủ đề học app android}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{|L{3.5cm}|Y|}
+\hline
+\multicolumn{2}{|l|}{\textbf{Tên Use Case: Chọn chủ đề học}} \\
+\hline
+\textbf{Mục đích:} & Học từ vựng \\
+\hline
+\textbf{Tác nhân:} & Bé (6 -- 10 tuổi) \\
+\hline
+\textbf{Điều kiện trước:} & Đăng ở trang chủ \\
+\hline
+\textbf{Điều kiện sau:} & Hiển thị nội dung học từ vựng \\
+\hline
+\textbf{Luồng sự kiện chính:} &
+\begin{minipage}[t]{\linewidth}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\ucstep{1. Người dùng chọn Học từ vựng.}
+\ucstep{2. Hệ thống mở bài học và hiển thị từ, nghĩa, hình ảnh.}
+\ucstep{3. Người dùng nhấn Nghe để nghe phát âm.}
+\ucstep{4. Hệ thống phát âm thanh mẫu.}
+\ucstep{5. Người dùng nhấn Tiếp/Trước để chuyển từ.}
+\end{minipage}
+\\
+\hline
+\textbf{Luồng sự kiện phụ:} &
+\begin{minipage}[t]{\linewidth}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\ucstep{1. 1. Nếu không có dữ liệu hệ thống thông báo chưa có bài học}
+\ucstep{4. 1. Nếu lỗi âm thanh hệ thống thông báo không phát được}
+\end{minipage}
+\\
+\hline
+\end{tabularx}
+\end{table}
+
+\noindent\textbf{Biểu đồ:}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_trinh_tu_chon_chu_de.jpg}
+\caption{Sơ đồ trình tự cho Chọn chủ đề}
+\end{figure}
+
+\noindent\textbf{d) Biểu đồ trình tự: Luyện nói}
+
+
+\noindent\textbf{Mô tả:}
+
+\begin{table}[H]
+\centering
+\caption{Bảng mô tả use case Luyện nói app android}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{|L{3.5cm}|Y|}
+\hline
+\multicolumn{2}{|l|}{\textbf{Tên Use Case: Luyện nói}} \\
+\hline
+\textbf{Mục đích:} & Luyện phát âm \\
+\hline
+\textbf{Tác nhân:} & Bé (6 -- 10 tuổi) \\
+\hline
+\textbf{Điều kiện trước:} & Đăng ở trang chủ \\
+\hline
+\textbf{Điều kiện sau:} & Hiển thị kết quả luyện phát âm \\
+\hline
+\textbf{Luồng sự kiện chính:} &
+\begin{minipage}[t]{\linewidth}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\ucstep{1. Người dùng chọn Luyện nói.}
+\ucstep{2. Hệ thống hiển thị từ cần luyện.}
+\ucstep{3. Người dùng nhấn bắt đầu nói.}
+\ucstep{4. Hệ thống ghi âm và nhận diện giọng nói.}
+\ucstep{5. Hệ thống so sánh với từ mẫu.}
+\ucstep{6. Hệ thống hiển thị kết quả và điểm.}
+\end{minipage}
+\\
+\hline
+\textbf{Luồng sự kiện phụ:} &
+\begin{minipage}[t]{\linewidth}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\ucstep{4. 1. Chưa cấp quyền micro → yêu cầu cấp quyền}
+\ucstep{4. 2. Không nhận diện được → yêu cầu thử lại}
+\ucstep{4. 3. Lỗi API → thông báo lỗi}
+\end{minipage}
+\\
+\hline
+\end{tabularx}
+\end{table}
+
+\noindent\textbf{Biểu đồ:}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_trinh_tu_luyen_noi.jpg}
+\caption{Sơ đồ trình tự cho Luyện nói}
+\end{figure}
+
+\noindent\textbf{e) Biểu đồ trình tự: Chat AI}
+
+
+\noindent\textbf{Mô tả:}
+
+\begin{table}[H]
+\centering
+\caption{Bảng mô tả use case Chat AI app android}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{|L{3.5cm}|Y|}
+\hline
+\multicolumn{2}{|l|}{\textbf{Tên Use Case: Chat AI}} \\
+\hline
+\textbf{Mục đích:} & Tương tác với AI \\
+\hline
+\textbf{Tác nhân:} & Bé (6 -- 10 tuổi) \\
+\hline
+\textbf{Điều kiện trước:} & Người dùng đã đăng nhập và truy cập vào chức năng Chat AI. \\
+\hline
+\textbf{Điều kiện sau:} & Hệ thống hiển thị câu trả lời từ AI cho người dùng. \\
+\hline
+\textbf{Luồng sự kiện chính:} &
+\begin{minipage}[t]{\linewidth}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\ucstep{1. Người dùng mở chức năng Chat AI.}
+\ucstep{2. Hệ thống hiển thị giao diện chat.}
+\ucstep{3. Người dùng nhập câu hỏi và nhấn gửi.}
+\ucstep{4. Hệ thống kiểm tra và gửi nội dung đến API.}
+\ucstep{5. API gửi yêu cầu đến Gemini AI.}
+\ucstep{6. AI xử lý và trả về câu trả lời.}
+\ucstep{7. Hệ thống nhận kết quả và hiển thị cho người dùng.}
+\end{minipage}
+\\
+\hline
+\textbf{Luồng sự kiện phụ:} &
+\begin{minipage}[t]{\linewidth}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\ucstep{3. 1. Nếu nội dung rỗng hệ thống yêu cầu nhập câu hỏi}
+\ucstep{4. 1. Nếu lỗi kết nối mạng/API hệ thống thông báo không gửi được yêu cầu}
+\ucstep{5. 1. Nếu API trả về lỗi hệ thống thông báo lỗi xử lý}
+\ucstep{6. 1. Nếu AI không trả về kết quả hệ thống thông báo lỗi}
+\ucstep{7. 1. Nếu phản hồi chậm hệ thống hiển thị trạng thái ``Đang xử lý…''}
+\end{minipage}
+\\
+\hline
+\end{tabularx}
+\end{table}
+
+\noindent\textbf{Biểu đồ:}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_trinh_tu_chat_ai.jpg}
+\caption{Sơ đồ trình tự cho Chat AI}
+\end{figure}
+
+\noindent\textbf{f) Biểu đồ trình tự: Chụp ảnh dịch}
+
+
+\noindent\textbf{Mô tả:}
+
+\begin{table}[H]
+\centering
+\caption{Bảng mô tả use case Chụp ảnh dịch}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{|L{3.5cm}|Y|}
+\hline
+\multicolumn{2}{|l|}{\textbf{Tên Use Case: Chụp ảnh dịch}} \\
+\hline
+\textbf{Mục đích:} & Cho phép người dùng chụp ảnh chứa nội dung tiếng Anh và hệ
+thống tự động nhận diện, dịch nghĩa sang tiếng Việt bằng AI. \\
+\hline
+\textbf{Tác nhân:} & Bé (6 -- 10 tuổi) \\
+\hline
+\textbf{Điều kiện trước:} & Người dùng đang ở màn hình chức năng Chụp ảnh dịch 
+(Photo Translate) \\
+\hline
+\textbf{Điều kiện sau:} & Hệ thống hiển thị kết quả nhận diện và bản dịch cho người dùng \\
+\hline
+\textbf{Luồng sự kiện chính:} &
+\begin{minipage}[t]{\linewidth}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\ucstep{1. Người dùng mở chức năng Chụp ảnh dịch}
+\ucstep{2. Người dùng nhấn nút Chụp ảnh}
+\ucstep{3. Hệ thống mở camera và cho phép người dùng chụp ảnh}
+\ucstep{4. Người dùng xác nhận ảnh vừa chụp}
+\ucstep{5. Hệ thống xử lý ảnh và trích xuất văn bản (OCR)}
+\ucstep{6. Hệ thống gửi nội dung văn bản đến API}
+\ucstep{7. API chuyển yêu cầu đến AI (Gemini) để dịch}
+\ucstep{8. AI xử lý và trả về kết quả}
+\ucstep{9. Hệ thống hiển thị văn bản gốc và bản dịch cho người dùng}
+\end{minipage}
+\\
+\hline
+\textbf{Luồng sự kiện phụ:} &
+\begin{minipage}[t]{\linewidth}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\ucstep{3. 1. Nếu người dùng không cấp quyền camera thì hệ thống yêu cầu cấp quyền}
+\ucstep{4. 1. Nếu người dùng hủy chụp ảnh hệ thống sẽ quay lại màn hình trước}
+\ucstep{5. 1. Nếu không nhận diện được văn bản thông báo ``Không tìm thấy nội dung''}
+\ucstep{6. 1. Nếu lỗi kết nối API thông báo ``Không thể gửi yêu cầu''}
+\ucstep{8. 1. Nếu AI không trả kết quả hệ thống sẽ thông báo lỗi}
+\ucstep{8. 2. Nếu phản hồi chậm hệ thống sẽ hiển thị trạng thái ``Đang xử lý…''}
+\end{minipage}
+\\
+\hline
+\end{tabularx}
+\end{table}
+
+\noindent\textbf{Biểu đồ:}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_trinh_tu_chup_anh_dich.jpg}
+\caption{Sơ đồ trình tự cho Chụp ảnh dịch}
+\end{figure}
+
+\noindent\textbf{g) Biểu đồ use case: Xem thông tin tài khoản}
+
+
+\noindent\textbf{Mô tả:}
+
+\begin{table}[H]
+\centering
+\caption{Bảng mô tả use case Xem thông tin tài khoản app android}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{|L{3.5cm}|Y|}
+\hline
+\multicolumn{2}{|l|}{\textbf{Tên Use Case: Xem thông tin tài khoản}} \\
+\hline
+\textbf{Mục đích:} & Xem thông tin cá nhân \\
+\hline
+\textbf{Tác nhân:} & Bé (6 -- 10 tuổi) \\
+\hline
+\textbf{Điều kiện trước:} & Đăng ở trang chủ \\
+\hline
+\textbf{Điều kiện sau:} & Đã chọn vào mục cá nhân \\
+\hline
+\textbf{Luồng sự kiện chính:} &
+\begin{minipage}[t]{\linewidth}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\ucstep{1. Người dùng nhấn vào biểu tượng tài khoản/avatar.}
+\ucstep{2. Hệ thống lấy thông tin tài khoản từ phiên đăng nhập.}
+\ucstep{3. Hệ thống hiển thị tên bé, tuổi và email phụ huynh.}
+\ucstep{4. Người dùng xem thông tin hoặc chọn đăng xuất.}
+\end{minipage}
+\\
+\hline
+\textbf{Luồng sự kiện phụ:} &
+\begin{minipage}[t]{\linewidth}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\ucstep{1.1. Nếu không có dữ liệu phiên đăng nhập, hệ thống chuyển về đăng nhập}
+\end{minipage}
+\\
+\hline
+\end{tabularx}
+\end{table}
+
+\noindent\textbf{Biểu đồ:}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_trinh_tu_xem_thong_tin_tai_khoan.jpg}
+\caption{Sơ đồ trình tự cho Xem thông tin tài khoản}
+\end{figure}
+
+\noindent\textbf{h) Biểu đồ trình tự: Quiz game}
+
+
+\noindent\textbf{Mô tả:}
+
+\renewcommand{\arraystretch}{1.25}
+
+\begin{longtable}{|p{3.5cm}|p{11cm}|}
+	\caption{Bảng mô tả use case Quiz Game app android}\\
+	\hline
+	\multicolumn{2}{|l|}{\textbf{Tên Use Case: Quiz Game}} \\
+	\hline
+	\endfirsthead
+	
+
+	
+	\hline
+	\endlastfoot
+	
+	\textbf{Mục đích:} & Cho phép bé làm bài quiz để ôn tập từ vựng tiếng Anh. \\
+	\hline
+	\textbf{Tác nhân:} & Bé (6 -- 10 tuổi) \\
+	\hline
+	\textbf{Điều kiện trước:} & Bé đã đăng nhập vào hệ thống và chọn chức năng Quiz Game. \\
+	\hline
+	\textbf{Điều kiện sau:} & Hệ thống hiển thị điểm số và lưu kết quả bài làm của bé. \\
+	\hline
+	
+	\textbf{Luồng sự kiện chính:} &
+	\begin{minipage}[t]{\linewidth}
+		\setlength{\parindent}{0pt}
+		\setlength{\parskip}{1pt}
+		1. Người dùng mở Quiz Game và bắt đầu làm bài.
+		
+		2. Hệ thống lấy và hiển thị câu hỏi.
+		
+		3. Người dùng chọn đáp án cho từng câu.
+		
+		4. Hệ thống chuyển câu hỏi và ghi nhận câu trả lời.
+		
+		5. Sau khi hoàn thành, hệ thống tính điểm và lưu kết quả.
+		
+		6. Hệ thống hiển thị điểm số cho người dùng.
+	\end{minipage}
+	\\
+	\hline
+	
+	\textbf{Luồng sự kiện phụ:} &
+	\begin{minipage}[t]{\linewidth}
+		\setlength{\parindent}{0pt}
+		\setlength{\parskip}{1pt}
+		2.1. Nếu không lấy được câu hỏi, hệ thống thông báo lỗi tải dữ liệu.
+		
+		2.2. Nếu câu hỏi không có đáp án, hệ thống bỏ qua câu hỏi.
+		
+		3.1. Nếu chưa chọn đáp án, hệ thống yêu cầu chọn đáp án.
+		
+		5.1. Nếu lỗi khi tính điểm, hệ thống thông báo lỗi và cho phép làm lại.
+		
+		5.2. Nếu lưu kết quả thất bại, hệ thống vẫn hiển thị điểm và thông báo chưa lưu kết quả.
+	\end{minipage}
+	\\
+	\hline
+	
+\end{longtable}
+
+\noindent\textbf{Biểu đồ:}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_trinh_tu_quiz_game.jpg}
+\caption{Sơ đồ trình tự cho Quiz Game}
+\end{figure}
+
+\noindent\textbf{i) Biểu đồ trình tự: Xem thành tích}
+
+
+\noindent\textbf{Mô tả:}
+
+\renewcommand{\arraystretch}{1.25}
+
+\begin{longtable}{|p{3.5cm}|p{11cm}|}
+	\caption{Bảng mô tả use case Xem thành tích app android}\\
+	\hline
+	\multicolumn{2}{|l|}{\textbf{Tên Use Case: Xem thành tích}} \\
+	\hline
+	\endfirsthead
+	
+	\endhead
+	
+	
+	
+	\hline
+	\endlastfoot
+	
+	\textbf{Mục đích:} & Xem điểm số và kết quả học tập của bé. \\
+	\hline
+	
+	\textbf{Tác nhân:} & Bé (6 -- 10 tuổi). \\
+	\hline
+	
+	\textbf{Điều kiện trước:} & Người dùng đã đăng nhập vào ứng dụng. \\
+	\hline
+	
+	\textbf{Điều kiện sau:} & Hệ thống hiển thị điểm và thành tích học tập. \\
+	\hline
+	
+	\textbf{Luồng sự kiện chính:} &
+	\begin{minipage}[t]{\linewidth}
+		\setlength{\parindent}{0pt}
+		\setlength{\parskip}{1pt}
+		\ucstep{1. Người dùng mở chức năng Thành tích.}
+		\ucstep{2. Hệ thống gửi yêu cầu lấy dữ liệu thành tích.}
+		\ucstep{3. Server trả về điểm số và kết quả học tập.}
+		\ucstep{4. Hệ thống hiển thị thành tích cho người dùng.}
+	\end{minipage}
+	\\
+	\hline
+	
+	\textbf{Luồng sự kiện phụ:} &
+	\begin{minipage}[t]{\linewidth}
+		\setlength{\parindent}{0pt}
+		\setlength{\parskip}{1pt}
+		\ucstep{2.1. Nếu lỗi kết nối server, hệ thống thông báo không tải được dữ liệu.}
+		\ucstep{3.1. Nếu chưa có thành tích, hệ thống hiển thị thông báo chưa có dữ liệu.}
+	\end{minipage}
+	\\
+	\hline
+	
+\end{longtable}
+
+\noindent\textbf{Biểu đồ:}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_trinh_tu_xem_thanh_tich.jpg}
+\caption{Sơ đồ trình tự cho Xem thành tích}
+\end{figure}
+
+\noindent\textbf{k) Biểu đồ trình tự: Đăng xuất}
+
+
+\noindent\textbf{Mô tả:}
+
+\renewcommand{\arraystretch}{1.25}
+
+\begin{longtable}{|p{3.5cm}|p{11cm}|}
+	\caption{Bảng mô tả use case Đăng xuất app android}\\
+	\hline
+	\multicolumn{2}{|l|}{\textbf{Tên Use Case: Đăng xuất}} \\
+	\hline
+	\endfirsthead
+	
+	\endhead
+	
+	
+	
+	\hline
+	\endlastfoot
+	
+	\textbf{Mục đích:} & Đăng xuất tài khoản. \\
+	\hline
+	
+	\textbf{Tác nhân:} & Bé (6 -- 10 tuổi). \\
+	\hline
+	
+	\textbf{Điều kiện trước:} & Đang ở mục xem thông tin tài khoản. \\
+	\hline
+	
+	\textbf{Điều kiện sau:} & Đăng xuất tài khoản thành công. \\
+	\hline
+	
+	\textbf{Luồng sự kiện chính:} &
+	\begin{minipage}[t]{\linewidth}
+		\setlength{\parindent}{0pt}
+		\setlength{\parskip}{1pt}
+		\ucstep{1. Người dùng chọn chức năng Đăng xuất.}
+		\ucstep{2. Hệ thống hiển thị hộp thoại xác nhận đăng xuất.}
+		\ucstep{3. Người dùng xác nhận đăng xuất.}
+		\ucstep{4. Hệ thống xóa phiên đăng nhập hiện tại.}
+		\ucstep{5. Hệ thống chuyển về màn hình đăng nhập.}
+	\end{minipage}
+	\\
+	\hline
+	
+	\textbf{Luồng sự kiện phụ:} &
+	\begin{minipage}[t]{\linewidth}
+		\setlength{\parindent}{0pt}
+		\setlength{\parskip}{1pt}
+		\ucstep{3.1. Nếu người dùng hủy đăng xuất, hệ thống giữ nguyên tại màn hình hiện tại.}
+	\end{minipage}
+
+	
+\end{longtable}
+
+\noindent\textbf{Biểu đồ:}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_trinh_tu_dang_xuat.jpg}
+\caption{Sơ đồ trình tự cho Đăng xuất}
+\end{figure}
+
+\subsection{Biểu đồ hoạt động}
+
+\noindent\textbf{a, Biểu đồ hoạt động: Đăng ký}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_hoat_dong_dang_ky.jpg}
+\caption{Sơ đồ hoạt động cho đăng ký}
+\end{figure}
+
+\noindent\textbf{b, Biểu đồ hoạt động: Đăng nhập}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_hoat_dong_dang_nhap.jpg}
+\caption{Sơ đồ hoạt động cho Đăng nhập}
+\end{figure}
+
+\noindent\textbf{c, Biểu đồ hoạt động: Chọn chủ đề học}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_hoat_dong_chon_chu_de_hoc.jpg}
+\caption{Sơ đồ hoạt động cho chọn chủ đề học}
+\end{figure}
+
+\noindent\textbf{d, Biểu đồ hoạt động: Luyện phát âm}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_hoat_dong_luyen_noi.jpg}
+\caption{Sơ đồ hoạt động cho Luyện nói}
+\end{figure}
+
+\noindent\textbf{e, Biểu đồ hoạt động: Chat AI}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_hoat_dong_chat_ai.jpg}
+\caption{Sơ đồ hoạt động cho Chat AI}
+\end{figure}
+
+\noindent\textbf{f, Biểu đồ hoạt động: Xem thành tích}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_hoat_dong_xem_thanh_tich_1.jpg}
+\caption{Sơ đồ hoạt động cho Xem thành tích}
+\end{figure}
+
+\noindent\textbf{g, Biểu đồ hoạt động: Xem thông tin tài khoản}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_hoat_dong_xem_thanh_tich_2.jpg}
+\caption{Sơ đồ hoạt động cho Xem thông tin tài khoản}
+\end{figure}
+
+\noindent\textbf{h, Biểu đồ hoạt động: Đăng xuất}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_hoat_dong_dang_xuat.jpg}
+\caption{Sơ đồ hoạt động cho Đăng xuất}
+\end{figure}
+
+\subsection{Sơ đồ lớp app Android}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_lop_app_android.jpg}
+\caption{Sơ đồ lớp App Android}
+\end{figure}
+
+\section{WebClient}
+
+\subsection{Sơ đồ use case tổng quát}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_use_case_tong_quat_webclient.jpg}
+\caption{Sơ đồ Use Case tổng quát WebClient}
+\end{figure}
+
+\subsection{Sơ đồ use case phân rã cho Admin}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_use_case_phan_ra_admin.jpg}
+\caption{Sơ đồ use case phân rã cho Admin}
+\end{figure}
+
+\subsection{Sơ đồ trình tự cho Admin}
+
+\noindent\textbf{a) Sơ đồ trình tự: Đăng Nhập}
+
+
+\noindent\textbf{Mô tả}
+
+\begin{table}[H]
+\centering
+\caption{Bảng mô tả use case Đăng nhập web admin}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{|L{3.5cm}|Y|}
+\hline
+\multicolumn{2}{|l|}{\textbf{Tên Use Case: Đăng nhập}} \\
+\hline
+\textbf{Mục đích:} & Cho phép Admin đăng nhập vào hệ thống quản trị \\
+\hline
+\textbf{Tác nhân:} & Admin \\
+\hline
+\textbf{Điều kiện trước:} & Có tài khoản hợp lệ trong hệ thống \\
+\hline
+\textbf{Điều kiện sau:} & Đăng nhập thành công và chuyển vào trang quản trị \\
+\hline
+\textbf{Luồng sự kiện chính:} &
+\begin{minipage}[t]{\linewidth}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\ucstep{1. Admin truy cập vào màn hình đăng nhập.}
+\ucstep{2. Hệ thống hiển thị form đăng nhập.}
+\ucstep{3. Admin nhập tên đăng nhập và mật khẩu.}
+\ucstep{4. Admin nhấn nút Đăng nhập.}
+\ucstep{5. Hệ thống thực hiện xác thực tài khoản.}
+\ucstep{6. Hệ thống tạo phiên đăng nhập.}
+\ucstep{7. Hệ thống chuyển đến trang Dashboard Admin.}
+\end{minipage}
+\\
+\hline
+\textbf{Luồng sự kiện phụ:} &
+\begin{minipage}[t]{\linewidth}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\ucstep{3. 1. Nếu chưa nhập đầy đủ thông tin, hệ thống hiển thị thông báo yêu cầu nhập đầy đủ.}
+\ucstep{5. 1. Nếu tài khoản hoặc mật khẩu không đúng, hệ thống hiển thị thông báo lỗi và yêu cầu nhập lại.}
+\end{minipage}
+\\
+\hline
+\end{tabularx}
+\end{table}
+
+\noindent\textbf{Biểu đồ:}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_trinh_tu_dang_nhap_admin.jpg}
+\caption{Sơ đồ trình tự Đăng nhập cho Admin}
+\end{figure}
+
+\noindent\textbf{b) Sơ đồ trình tự: Đăng xuất}
+
+
+\noindent\textbf{Mô tả}
+
+\begin{table}[H]
+\centering
+\caption{Bảng mô tả use case Đăng xuất web admin}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{|L{3.5cm}|Y|}
+\hline
+\multicolumn{2}{|l|}{\textbf{Tên Use Case: Đăng xuất}} \\
+\hline
+\textbf{Mục đích:} & Cho phép Admin đăng xuất khỏi hệ thống \\
+\hline
+\textbf{Tác nhân:} & Admin \\
+\hline
+\textbf{Điều kiện trước:} & Admin đã đăng nhập vào hệ thống \\
+\hline
+\textbf{Điều kiện sau:} & Đăng xuất thành công và quay về trang đăng nhập \\
+\hline
+\textbf{Luồng sự kiện chính:} &
+\begin{minipage}[t]{\linewidth}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\ucstep{1. Admin chọn chức năng Đăng xuất.}
+\ucstep{2. Hệ thống hiển thị thông báo xác nhận đăng xuất.}
+\ucstep{3. Admin xác nhận đăng xuất.}
+\ucstep{4. Hệ thống xóa phiên đăng nhập (session).}
+\ucstep{5. Hệ thống chuyển về màn hình đăng nhập.}
+\end{minipage}
+\\
+\hline
+\textbf{Luồng sự kiện phụ:} &
+\begin{minipage}[t]{\linewidth}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\ucstep{2. 1. Nếu Admin chọn hủy đăng xuất:}
+\ucstep{1.1. Hệ thống đóng thông báo xác nhận}
+\ucstep{1.2. Giữ nguyên trạng thái tại trang hiện tại}
+\end{minipage}
+\\
+\hline
+\end{tabularx}
+\end{table}
+
+\noindent\textbf{Biểu đồ:}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_trinh_tu_dang_xuat_admin.jpg}
+\caption{Sơ đồ trình tự Đăng xuất cho Admin}
+\end{figure}
+
+\noindent\textbf{c) Biểu đồ trình tự: Thêm chủ đề học}
+
+
+\noindent\textbf{Mô tả:}
+
+\begin{table}[H]
+\centering
+\caption{Bảng mô tả use case Thêm chủ đề học web admin}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{|L{3.5cm}|Y|}
+\hline
+\multicolumn{2}{|l|}{\textbf{Tên Use Case: Thêm chủ đề học}} \\
+\hline
+\textbf{Mục đích:} & Cho phép Admin thêm chủ đề học mới vào hệ thống \\
+\hline
+\textbf{Tác nhân:} & Admin \\
+\hline
+\textbf{Điều kiện trước:} & Admin đã đăng nhập vào hệ thống 
+Đang ở màn hình quản lý chủ đề học \\
+\hline
+\textbf{Điều kiện sau:} & Chủ đề học mới được thêm thành công vào hệ thống \\
+\hline
+\textbf{Luồng sự kiện chính:} &
+\begin{minipage}[t]{\linewidth}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\ucstep{1. Admin chọn chức năng Thêm chủ đề học.}
+\ucstep{2. Hệ thống hiển thị form nhập thông tin chủ đề.}
+\ucstep{3. Admin nhập thông tin chủ đề (tên chủ đề, mô tả, hình ảnh nếu có).}
+\ucstep{4. Admin nhấn nút Lưu.}
+\ucstep{5. Hệ thống kiểm tra dữ liệu nhập.}
+\ucstep{6. Hệ thống lưu chủ đề vào cơ sở dữ liệu.}
+\ucstep{7. Hệ thống hiển thị thông báo thêm thành công.}
+\ucstep{8. Hệ thống cập nhật và hiển thị danh sách chủ đề mới.}
+\end{minipage}
+\\
+\hline
+\textbf{Luồng sự kiện phụ:} &
+\begin{minipage}[t]{\linewidth}
+	\setlength{\parindent}{0pt}
+	\setlength{\parskip}{3pt}
+	
+	5.1. Nếu Admin nhập thiếu thông tin:
+	\begin{itemize}[leftmargin=1.2cm,noitemsep]
+		\item Hệ thống hiển thị thông báo yêu cầu nhập đầy đủ.
+		\item Quay lại bước 3.
+	\end{itemize}
+	
+	6.1. Nếu tên chủ đề đã tồn tại:
+	\begin{itemize}[leftmargin=1.2cm,noitemsep]
+		\item Hệ thống hiển thị thông báo ``Chủ đề đã tồn tại''.
+		\item Yêu cầu nhập lại.
+		\item Quay lại bước 3.
+	\end{itemize}
+	
+	6.2. Nếu xảy ra lỗi hệ thống hoặc lỗi lưu dữ liệu:
+	\begin{itemize}[leftmargin=1.2cm,noitemsep]
+		\item Hệ thống hiển thị thông báo ``Thêm thất bại''.
+		\item Kết thúc use case.
+	\end{itemize}
+	
+\end{minipage}
+\\
+\hline
+\end{tabularx}
+\end{table}
+
+\noindent\textbf{Sơ đồ:}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_trinh_tu_them_chu_de_hoc_admin.jpg}
+\caption{Sơ đồ trình tự Thêm chủ đề học cho Admin}
+\end{figure}
+
+\noindent\textbf{d) Sơ đồ trình tự: Sửa chủ đề học}
+
+
+\noindent\textbf{Mô tả:}
+
+\renewcommand{\arraystretch}{1.25}
+
+\begin{longtable}{|p{3.5cm}|p{11cm}|}
+	\caption{Bảng mô tả use case Sửa chủ đề học web admin}\\
+	\hline
+	\multicolumn{2}{|l|}{\textbf{Tên Use Case: Sửa chủ đề học}} \\
+	\hline
+	\endfirsthead
+	
+	\endhead
+	
+	\hline
+	\endfoot
+	
+	\hline
+	\endlastfoot
+	
+	\textbf{Mục đích:} & Cho phép Admin chỉnh sửa thông tin chủ đề học. \\
+	\hline
+	
+	\textbf{Tác nhân:} & Admin. \\
+	\hline
+	
+	\textbf{Điều kiện trước:} & Admin đã đăng nhập vào hệ thống và đang ở màn hình quản lý chủ đề học. \\
+	\hline
+	
+	\textbf{Điều kiện sau:} & Thông tin chủ đề học được cập nhật thành công. \\
+	\hline
+	
+	\textbf{Luồng sự kiện chính:} &
+	\begin{minipage}[t]{\linewidth}
+		\setlength{\parindent}{0pt}
+		\setlength{\parskip}{1pt}
+		\ucstep{1. Admin chọn chủ đề học cần sửa.}
+		\ucstep{2. Hệ thống hiển thị thông tin chi tiết của chủ đề học.}
+		\ucstep{3. Admin chọn chức năng Sửa.}
+		\ucstep{4. Hệ thống hiển thị biểu mẫu chỉnh sửa chủ đề học.}
+		\ucstep{5. Admin chỉnh sửa thông tin chủ đề học.}
+		\ucstep{6. Admin nhấn nút Lưu.}
+		\ucstep{7. Hệ thống kiểm tra dữ liệu đã nhập.}
+		\ucstep{8. Hệ thống cập nhật thông tin chủ đề học vào cơ sở dữ liệu.}
+		\ucstep{9. Hệ thống hiển thị thông báo sửa thành công.}
+		\ucstep{10. Hệ thống cập nhật lại danh sách chủ đề học.}
+	\end{minipage}
+	\\
+	\hline
+	
+	\textbf{Luồng sự kiện phụ:} &
+	\begin{minipage}[t]{\linewidth}
+		\setlength{\parindent}{0pt}
+		\setlength{\parskip}{1pt}
+		\ucstep{7.1. Nếu Admin nhập thiếu thông tin, hệ thống hiển thị thông báo yêu cầu nhập đầy đủ và quay lại bước 5.}
+		\ucstep{7.2. Nếu tên chủ đề học đã tồn tại, hệ thống hiển thị thông báo lỗi và yêu cầu Admin nhập lại.}
+		\ucstep{8.1. Nếu cập nhật thất bại, hệ thống hiển thị thông báo sửa thất bại.}
+	\end{minipage}
+	\\
+	
+\end{longtable}
+
+\noindent\textbf{Sơ đồ:}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_trinh_tu_sua_chu_de_hoc_admin.jpg}
+\caption{Sơ đồ trình tự sửa chủ đề học cho Admin}
+\end{figure}
+
+\noindent\textbf{e) Sơ đồ trình tự: Xóa chủ đề học}
+
+
+\noindent\textbf{Mô tả:}
+
+\renewcommand{\arraystretch}{1.25}
+
+\begin{longtable}{|p{3.5cm}|p{11cm}|}
+	\caption{Bảng mô tả use case Xóa chủ đề học cho admin}\\
+	\hline
+	\multicolumn{2}{|l|}{\textbf{Tên Use Case: Xóa chủ đề học}} \\
+	\hline
+	\endfirsthead
+	
+	\endhead
+	
+	\hline
+	\endfoot
+	
+	\hline
+	\endlastfoot
+	
+	\textbf{Mục đích:} & Cho phép Admin xóa chủ đề học khỏi hệ thống. \\
+	\hline
+	
+	\textbf{Tác nhân:} & Admin. \\
+	\hline
+	
+	\textbf{Điều kiện trước:} & Admin đã đăng nhập vào hệ thống và đang ở màn hình quản lý chủ đề học. \\
+	\hline
+	
+	\textbf{Điều kiện sau:} & Chủ đề học được xóa thành công khỏi hệ thống. \\
+	\hline
+	
+	\textbf{Luồng sự kiện chính:} &
+	\begin{minipage}[t]{\linewidth}
+		\setlength{\parindent}{0pt}
+		\setlength{\parskip}{1pt}
+		\ucstep{1. Admin chọn chủ đề học cần xóa.}
+		\ucstep{2. Hệ thống hiển thị thông tin chủ đề học.}
+		\ucstep{3. Admin chọn chức năng Xóa.}
+		\ucstep{4. Hệ thống hiển thị thông báo xác nhận xóa.}
+		\ucstep{5. Admin xác nhận xóa chủ đề học.}
+		\ucstep{6. Hệ thống kiểm tra chủ đề học trong cơ sở dữ liệu.}
+		\ucstep{7. Hệ thống xóa chủ đề học khỏi cơ sở dữ liệu.}
+		\ucstep{8. Hệ thống hiển thị thông báo xóa thành công.}
+		\ucstep{9. Hệ thống cập nhật lại danh sách chủ đề học.}
+	\end{minipage}
+	\\
+	\hline
+	
+	\textbf{Luồng sự kiện phụ:} &
+	\begin{minipage}[t]{\linewidth}
+		\setlength{\parindent}{0pt}
+		\setlength{\parskip}{1pt}
+		\ucstep{4.1. Nếu Admin hủy xóa, hệ thống đóng thông báo xác nhận và giữ nguyên danh sách chủ đề học.}
+		\ucstep{6.1. Nếu chủ đề học không tồn tại, hệ thống hiển thị thông báo lỗi.}
+		\ucstep{7.1. Nếu xóa thất bại, hệ thống hiển thị thông báo xóa thất bại.}
+	\end{minipage}
+	\\
+	
+\end{longtable}
+
+\noindent\textbf{Sơ đồ:}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_trinh_tu_xoa_chu_de_hoc_admin.jpg}
+\caption{Sơ đồ trình tự Xóa chủ đề học cho Admin}
+\end{figure}
+
+\noindent\textbf{f) Sơ đồ trình tự: Thêm từ vựng}
+
+
+\noindent\textbf{Mô tả:}
+
+\begin{table}[H]
+\centering
+\caption{Bảng mô tả use case thêm từ vựng cho admin}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{|L{3.5cm}|Y|}
+\hline
+\multicolumn{2}{|l|}{\textbf{Tên Use Case: Thêm từ vựng}} \\
+\hline
+\textbf{Mục đích:} & Cho phép Admin thêm từ vựng mới vào hệ thống \\
+\hline
+\textbf{Tác nhân:} & Admin \\
+\hline
+\textbf{Điều kiện trước:} & Đang ở màn hình quản lý từ vựng \\
+\hline
+\textbf{Điều kiện sau:} & Từ vựng mới được thêm thành công vào hệ thống \\
+\hline
+\textbf{Luồng sự kiện chính:} &
+\begin{minipage}[t]{\linewidth}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\ucstep{1. Admin chọn chức năng Thêm từ vựng.}
+\ucstep{2. Hệ thống hiển thị form nhập thông tin từ vựng.}
+\ucstep{3. Admin nhập thông tin từ vựng (từ tiếng Anh, nghĩa tiếng Việt, hình ảnh, âm thanh, chủ đề).}
+\ucstep{4. Admin nhấn nút Lưu.}
+\ucstep{5. Hệ thống kiểm tra dữ liệu nhập.}
+\ucstep{6. Hệ thống lưu từ vựng vào cơ sở dữ liệu.}
+\ucstep{7. Hệ thống hiển thị thông báo thêm thành công.}
+\ucstep{8. Hệ thống cập nhật và hiển thị danh sách từ vựng mới.}
+\end{minipage}
+\\
+\hline
+\textbf{Luồng sự kiện phụ:} &
+\begin{minipage}[t]{\linewidth}
+	\setlength{\parindent}{0pt}
+	
+	5.2. Nếu từ vựng đã tồn tại:
+	
+	\begin{itemize}[leftmargin=1.2cm,noitemsep,topsep=2pt]
+		\item Hệ thống hiển thị thông báo ``Từ vựng đã tồn tại''.
+		\item Yêu cầu nhập lại.
+		\item Quay lại bước 3.
+	\end{itemize}
+	
+	6.1. Nếu xảy ra lỗi khi lưu dữ liệu:
+	
+	\begin{itemize}[leftmargin=1.2cm,noitemsep,topsep=2pt]
+		\item Hệ thống hiển thị thông báo ``Thêm từ vựng thất bại''.
+		\item Kết thúc use case.
+	\end{itemize}
+	
+\end{minipage}
+\\
+\hline
+\end{tabularx}
+\end{table}
+
+\noindent\textbf{Sơ đồ:}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_trinh_tu_them_tu_vung_admin.jpg}
+\caption{Sơ đồ trình tự Thêm từ vựng cho Admin}
+\end{figure}
+
+\noindent\textbf{g) Biểu đồ trình tự cho các use case còn lại}
+
+
+Với các biểu đồ trình tự như (Thêm, sửa, xóa) người dùng, kết quả luyện nói, thành tích… thì quy trình hoạt động cũng tương tự với các biểu đồ trên.
+
+
+\subsection{Sơ đồ hoạt động cho Admin}
+
+\noindent\textbf{a) Sơ đồ hoạt động: Đăng nhập}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_hoat_dong_dang_nhap_admin.jpg}
+\caption{Sơ đồ hoạt động Đăng nhập cho admin}
+\end{figure}
+
+\noindent\textbf{b) Sơ đồ trình tự: Đăng xuất}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_hoat_dong_dang_xuat_admin.jpg}
+\caption{Sơ đồ hoạt động Đăng xuất cho Admin}
+\end{figure}
+
+\noindent\textbf{c) Sơ đồ hoạt động: Thêm chủ đề học}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_hoat_dong_them_chu_de_hoc_admin.jpg}
+\caption{Sơ đồ hoạt động Thêm chủ đề học của Admin}
+\end{figure}
+
+\noindent\textbf{d) Sơ đồ hoạt động: Sửa chủ đề học}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_hoat_dong_sua_chu_de_hoc_admin.jpg}
+\caption{Sơ đồ hoạt động sửa chủ đề học cho Admin}
+\end{figure}
+
+\noindent\textbf{e) Sơ đồ hoạt động: Xóa chủ đề học}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_hoat_dong_xoa_chu_de_hoc_admin.jpg}
+\caption{Sơ đồ hoạt động Xóa chủ đề học của Admin}
+\end{figure}
+
+\noindent\textbf{f) Sơ đồ hoạt động: Thêm từ vựng}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{so_do_hoat_dong_them_tu_vung_admin.jpg}
+\caption{Sơ đồ hoạt động Thêm từ vựng của Admin}
+\end{figure}
+
+\noindent\textbf{g) Sơ đồ hoạt động của các use case còn lại:}
+
+
+Với các biểu đồ hoạt động như (Thêm, sửa, xóa) người dùng, kết quả luyện nói, thành tích… thì quy trình hoạt động cũng tương tự với các biểu đồ trên.
+
+
+\subsection{User web:}
+
+Đối với user các chức năng được thể hiện rõ ở phần app Android, thì ở user web cũng được mô tả tương tự theo các chức năng của app.

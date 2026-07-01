@@ -1,0 +1,212 @@
+Trong quá trình nghiên cứu và tìm hiểu để xây dựng hệ thông ``Tiếng Anh Cho Bé'', em đã sửa dụng nhiều mô hình và công nghệ khác nhau nhằm giúp hệ thống hoạt động ổn định, dễ quản lý và dễ mở rộng trong tương lai.
+
+
+Hệ thống em xây dựng bới mô hình Client -- server và kiếng trúc ba tầng. Em xây dựng ứng dụng android và website đóng vai trò phía người người dùng, còn máy chủ chịu trách nhiệm xử lý và kết nối cơ sở dữ liệu.
+
+
+Đối với website thì em áp dụng mô hình MVC còn ứng dụng android em xây dựng theo mô hình MVVM nhằm giúp việc tổ chức source cho rõ ràng hơn và dễ bảo trì hệ thống hơn. Một phần cũng là để gần nhất các kiến đã được thầy cô giảng dạy trực tiếp trên lớp.
+
+
+Các thành phần trong hệ thống thực hiện trao đổi dữ liệu thông qua RESTful API với định dạng JSON nhằm hỗ trợ quá trình truyền và xử lý thông tin hiệu quả hơn. Ngoài ra, hệ thống còn áp dụng công nghệ trí tuệ nhân tạo để nâng cao khả năng tương tác và hỗ trợ người dùng trong quá trình sử dụng.
+
+
+\section{Các mô hình được sử dụng}
+
+\subsection{Mô hình Client -- Server}
+
+Mô hình Client -- Server là một trong các mô hình phổ biến trong quá trình phát triển phần mềm hiện nay. Trong mô client -- sercer, phía client sẽ gửi yêu cầu đến server, sau đó server tiếp nhận và xử lý dữ liệu rồi trả kết quả lại cho client.
+
+
+Đối với hệ thống ``Tiếng Anh Cho Bé'', ứng dụng Android và Website sẽ đóng vai trò phía client, còn server được xây dựng bằng PHP và MySQL để xử lý dữ liệu. Khi người dùng đăng nhập, học từ vựng hoặc làm bài quiz, các yêu cầu sẽ được gửi lên server để xử lý rồi trả dữ liệu về cho ứng dụng hiển thị.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.65\textwidth]{mo_hinh_client_server.jpg}
+\caption{Mô hình Client - Server}
+\end{figure}
+
+Việc sử dụng mô hình Client -- Server sẽ giúp dữ liệu được quản lý tập trung, dễ đồng bộ và thuận tiện khi mở rộng thêm nhiều chức năng trong tương lai.
+
+
+\subsection{Mô hình MVC}
+
+MVC là mô hình mà chia hệ thống thành các phần riêng biệt để dễ quản lý và phát triển.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.65\textwidth]{mo_hinh_mvc.jpg}
+\caption{Mô Hình MVC}
+\end{figure}
+
+Trong đó mô hình MVC:
+
+
+\begin{itemize}
+\item Model: là nơi xử lý dữ liệu và làm việc với dữ liệu.
+\item View: là thành phần giao diện hiển thị và tương tác với người dùng
+\item Controler: có nhiệm tiếp nhận yêu cầu người dùng và xử lý logic của chương trình
+\end{itemize}
+
+\subsection{Mô hình MVVM}
+
+MVVM là mô hình được sử dụng nhiều trong lập trình Android hiện đại. Mô hình này giúp tách phần giao diện và phần xử lý dữ liệu thành các thành phần riêng biệt.
+
+
+Trong MVVM là:
+
+
+\begin{itemize}
+\item Model sẽ là nơi để quản lý dữ liệu
+\item View là giao diện để hiển thị trên màn hình điện thoại người dùng
+\item ViweModel là trung gian xử lý dữ liệu trước khi hiển thị giao diện màn hình lên
+\end{itemize}
+
+Nhờ có mô hình MVVM mà trong ứng dụng android đã trở nên dễ dàng quản lý hơn, hạn chế được các lỗi và thuận tiện khi phát triển thêm tính năng mới.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{mo_hinh_mvvm.jpg}
+\caption{Mô hình MVVM}
+\end{figure}
+
+\section{Kiến trúc phần mềm}
+
+\subsection{Kiến trúc 3 tầng}
+
+Kiến trúc ba tầng là mô hình chia hệ thống ra thành ba thành phần riêng biệt, gồm:
+
+
+\begin{itemize}
+\item Tầng giao diện
+\item Tầng xử lý nghiệp vụ
+\item Tầng dữ liệu
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.65\textwidth]{kien_truc_3_tang.jpg}
+\caption{Kiến trúc 3 tầng}
+\end{figure}
+
+Tầng giao diện chịu trách nhiệm hiển thị và tương tác với người dùng. Tầng xử lý nghiệp vụ sẽ thực hiện các chức năng của hệ thống như đăng nhập, game quiz,…. Tầng dữ liệu sẽ lưu thông tin trong cơ sở dữ liệu.
+
+
+\subsection{RESTful API trong kiến trúc hệ thống}
+
+RESTful API là cơ chế cho phép các hệ thống hoặc ứng dụng kết nối và truyền dữ liệu với nhau thông qua giao thức HTTP một cách linh hoạt và thuận tiện.
+
+
+Trong hệ thống ``Tiếng Anh Cho Bé'', REST API đóng vai trò đóng vai trò trung gian kết nối giữa Android, Website và Server. Dữ liệu được thực thi dưới dạng JSON nhằm giúp cho quá trình xử lý nhanh và thuận tiện hơn trong việc phát triển trên nhiều nền tảng khác nhau.
+
+
+Thông qua REST API, các chức năng trên các nền tảng khác nhau sẽ cùng hoạt động và đồng bộ dữ liệu một cách dễ dàng.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.65\textwidth]{restful_api.jpg}
+\caption{Restful API}
+\end{figure}
+
+\section{Công nghệ sử dụng}
+
+\subsection{WebClient}
+
+HTML là ngôn ngữ được sử dụng để tạo cấu trúc cơ bản cho website, hỗ trợ xây dựng các thành phần như tiêu đề, hình ảnh, bảng biểu và nội dung hiển thị trên trang web. Công nghệ này đóng vai trò tổ chức bố cục và trình bày giao diện theo hướng dễ sử dụng đối với người dùng.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.65\textwidth]{html.jpg}
+\caption{Hình ảnh HTML}
+\end{figure}
+
+CSS (Cascading Style Sheets) là ngôn ngữ dùng để thiết kế giao điện và định dạng cho website. CSS giúp tạo màu sắc, bố cục, kích thước chữ và tạo giao diện hài hòa với người dùng hơn. Nhờ CSS nên hệ thống trở nên trực quan sinh động và phù hợp với trẻ em hơn.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.65\textwidth]{css.jpg}
+\caption{Hình ảnh CSS}
+\end{figure}
+
+PHP là ngôn ngữ lập trình phía server được sử dụng để xử lý dữ liệu và kết nối cơ sở dữ liệu. Đối với hệ thống ``Tiếng Anh Cho Bé'' PHP được được dùng để viết REST API xử lý dữ liệu luồng đăng nhập, quản lý dữ liệu người dùng, quản lý quiz và các chức năng quản trị hệ thống.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.65\textwidth]{php.jpg}
+\caption{Hình ảnh PHP}
+\end{figure}
+
+\subsection{Server}
+
+MySQL là một hệ quản trị được sử dụng rộng rãi hiện nay, MySQL cho phép được lưu trữ, truy xuất và quản lý dữ liệu một cách hiệu quả. Hệ thống sử dụng MySQL để lưu trữ thông tin tài khoản, bài học, câu hỏi quiz, lịch sử học tập và các dữ liệu của người dùng.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.65\textwidth]{mysql.jpg}
+\caption{Hình ảnh MySQL}
+\end{figure}
+
+XAMPP là một phần mềm hỗ trợ tạo môi trường server trên máy tính cá nhân. Nó được tích hợp sẵn Apache, PHP và MySQL giúp việc phát triển và kiểm thử hệ thống một cách thuận tiện hơn.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.65\textwidth]{xampp.jpg}
+\caption{Hình ảnh Xampp}
+\end{figure}
+
+\subsection{App Android}
+
+Android Studio là một môi trường phát triển được tích hợp (IDE) và là môi trường chính thức dành cho lập trình android. Công cụ này hỗ trợ viết code thiết kế giao diện ứng dựng, kiểm tra lỗi và kiểm thử ứng dụng trên thiết bị android. Ứng dụng ``Tiếng Anh Cho Bé'' được xây dựng và phát triển hoàn toàn bằng Android Studio.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.65\textwidth]{android_studio.jpg}
+\caption{Giới thiệu về Android studiod}
+\end{figure}
+
+Java là ngôn ngữ lập trình được sử dụng để phát triển ứng dụng ``Tiếng Anh Cho Bé''. Đây là ngôn ngữ có khả năng hoạt động ổn định, hỗ trợ bảo mật tốt và được ứng dụng rộng rãi trong nhiều lĩnh vực như phát triển ứng dụng di động, hệ thống doanh nghiệp, xử lý dữ liệu và các dịch vụ phía máy chủ.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.55\textwidth]{ngon_ngu_java.jpg}
+\caption{Giới thiệu về ngôn ngữ java}
+\end{figure}
+
+\subsection{Trí tuệ nhân tạo (AI)}
+
+Google Gemini là mô hình trí tuệ nhân tạo do Google phát triển với khả năng xử lý và phản hồi thông minh. Trong hệ thống ``Tiếng Anh Cho Bé'', Gemini AI được tích hợp để hỗ trợ chức năng Chat AI, và dịch văn bản tiếng Anh sang tiếng Việt, giúp khả năng tương tác và hỗ trợ học tập cho trẻ em.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.55\textwidth]{tri_tue_nhan_tao_ai.jpg}
+\caption{Trí tuệ nhân tạo AI}
+\end{figure}
+
+AI Speech Recognition (Nhận diện giọng nói) là công nghệ nhận diện giọng nói bằng trí tuệ nhân tạo. Công nghệ này cho phép hệ thống ghi nhận giọng nói của người dùng và chuyển đổi thành văn bản. Công nghệ này sẽ hỗ trợ việc phát âm cho trẻ em trong hệ thống.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.65\textwidth]{ai_speech_recognition.jpg}
+\caption{AI Speech Recognition}
+\end{figure}
+
+OCR (Optical Character Recognition - Nhận dạng ký tự quang học) là công nghệ giúp nhận diện văn bản từ hình ảnh. Khi người dùng chụp ảnh chứa nội dung tiếng Anh, hệ thống sẽ sử dụng OCR để trích xuất văn bản rồi tiến hành dịch sang tiếng Việt bằng AI. Tính năng này sẽ giúp trẻ em học tiếng anh trực quan và thuận tiện hơn trong quá trình sử dụng ứng dụng.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.65\textwidth]{ocr.jpg}
+\caption{Hình ảnh OCR}
+\end{figure}
