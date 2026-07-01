@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <color name="card_white">#FDFEFF</color>
+    <color name="deep_blue">#2B59B8</color>
+    <color name="pink">#FFC8DE</color>
+    <color name="primary_blue">#4E86FF</color>
+    <color name="sky_end">#E9F9FF</color>
+    <color name="sky_start">#9FDFFF</color>
+    <color name="text_dark">#294164</color>
+    <color name="white">#FFFFFF</color>
+    <string name="app_name">Tiếng Anh Cho Bé</string>
+    <style name="Theme.KidsEnglishAI" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary_blue</item>
+        <item name="colorPrimaryVariant">@color/deep_blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/pink</item>
+        <item name="android:statusBarColor">@color/primary_blue</item>
+        <item name="android:windowLightStatusBar" ns1:targetApi="23">false</item>
+        <item name="android:windowBackground">@drawable/bg_sky</item>
+    </style>
+</resources>

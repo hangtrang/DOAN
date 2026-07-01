@@ -1,0 +1,274 @@
+[
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/drawable_bg_chat_bot.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/drawable/bg_chat_bot.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/xml_file_paths.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/xml/file_paths.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/drawable_bg_sky.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/drawable/bg_sky.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/drawable_ui_soft_card_blue.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/drawable/ui_soft_card_blue.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/drawable_owl_mascot.png.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/drawable/owl_mascot.png"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/drawable_owl_reader_big.png.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/drawable/owl_reader_big.png"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/drawable_animal_dog.png.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/drawable/animal_dog.png"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/drawable_bg_chat_user.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/drawable/bg_chat_user.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/layout_activity_achievement.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/layout/activity_achievement.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/drawable_mayanh.png.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/drawable/mayanh.png"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/mipmap-xxxhdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/drawable_bg_round_white.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/drawable/bg_round_white.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/layout_item_chat_user.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/layout/item_chat_user.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/drawable_bg_kid_page.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/drawable/bg_kid_page.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/drawable_animal_elephant.png.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/drawable/animal_elephant.png"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/layout_activity_lesson.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/layout/activity_lesson.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/layout_activity_photo_translate.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/layout/activity_photo_translate.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/drawable_quizgame.png.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/drawable/quizgame.png"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/drawable_ic_arrow.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/drawable/ic_arrow.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/drawable_micluyennoi.png.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/drawable/micluyennoi.png"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/layout_activity_home.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/layout/activity_home.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/drawable_bg_action_purple.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/drawable/bg_action_purple.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/drawable_thanhtich.png.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/drawable/thanhtich.png"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/drawable_bg_kid_gradient.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/drawable/bg_kid_gradient.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/drawable_chatbot.png.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/drawable/chatbot.png"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/layout_activity_practice.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/layout/activity_practice.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/xml_network_security_config.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/xml/network_security_config.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/layout_activity_forgot_password.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/layout/activity_forgot_password.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/drawable_ui_button_gold.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/drawable/ui_button_gold.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/drawable_chudehoc.png.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/drawable/chudehoc.png"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/drawable_ui_input_pill.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/drawable/ui_input_pill.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/drawable_ic_volume.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/drawable/ic_volume.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/drawable_bg_title_cloud.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/drawable/bg_title_cloud.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/mipmap-xhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/mipmap-xhdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/mipmap-hdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/mipmap-hdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/layout_item_history.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/layout/item_history.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/drawable_img_1.png.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/drawable/img_1.png"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/mipmap-xxhdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/drawable_ui_soft_card_green.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/drawable/ui_soft_card_green.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/layout_activity_login.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/drawable_rounded_image_bg.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/drawable/rounded_image_bg.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/layout_activity_edit_account.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/layout/activity_edit_account.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/layout_item_topic.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/layout/item_topic.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/drawable_bg_action_blue.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/drawable/bg_action_blue.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/drawable_ui_soft_card_yellow.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/drawable/ui_soft_card_yellow.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/drawable_ic_mic.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/drawable/ic_mic.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/layout_activity_chatbot.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/layout/activity_chatbot.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/mipmap-mdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/mipmap-mdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/drawable_ui_panel.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/drawable/ui_panel.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/layout_activity_game_quiz.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/layout/activity_game_quiz.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/layout_activity_register.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/layout/activity_register.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/layout_activity_topic_list.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/layout/activity_topic_list.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/layout_item_chat_bot.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/layout/item_chat_bot.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/drawable_ui_chip.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/drawable/ui_chip.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-debug-36:/drawable_ui_soft_card_purple.xml.flat",
+        "source": "com.trang.kidsenglishai.app-main-38:/drawable/ui_soft_card_purple.xml"
+    }
+]

@@ -1,0 +1,66 @@
+[
+    {
+        "merged": "com.trang.kidsenglishai.app-mergeDebugResources-35:/layout/activity_login.xml",
+        "source": "com.trang.kidsenglishai.app-main-38:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-mergeDebugResources-35:/layout/activity_achievement.xml",
+        "source": "com.trang.kidsenglishai.app-main-38:/layout/activity_achievement.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-mergeDebugResources-35:/layout/item_chat_user.xml",
+        "source": "com.trang.kidsenglishai.app-main-38:/layout/item_chat_user.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-mergeDebugResources-35:/layout/activity_topic_list.xml",
+        "source": "com.trang.kidsenglishai.app-main-38:/layout/activity_topic_list.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-mergeDebugResources-35:/layout/activity_lesson.xml",
+        "source": "com.trang.kidsenglishai.app-main-38:/layout/activity_lesson.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-mergeDebugResources-35:/layout/activity_practice.xml",
+        "source": "com.trang.kidsenglishai.app-main-38:/layout/activity_practice.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-mergeDebugResources-35:/layout/activity_chatbot.xml",
+        "source": "com.trang.kidsenglishai.app-main-38:/layout/activity_chatbot.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-mergeDebugResources-35:/layout/item_chat_bot.xml",
+        "source": "com.trang.kidsenglishai.app-main-38:/layout/item_chat_bot.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-mergeDebugResources-35:/layout/activity_photo_translate.xml",
+        "source": "com.trang.kidsenglishai.app-main-38:/layout/activity_photo_translate.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-mergeDebugResources-35:/layout/activity_register.xml",
+        "source": "com.trang.kidsenglishai.app-main-38:/layout/activity_register.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-mergeDebugResources-35:/layout/activity_home.xml",
+        "source": "com.trang.kidsenglishai.app-main-38:/layout/activity_home.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-mergeDebugResources-35:/layout/activity_edit_account.xml",
+        "source": "com.trang.kidsenglishai.app-main-38:/layout/activity_edit_account.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-mergeDebugResources-35:/layout/item_history.xml",
+        "source": "com.trang.kidsenglishai.app-main-38:/layout/item_history.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-mergeDebugResources-35:/layout/item_topic.xml",
+        "source": "com.trang.kidsenglishai.app-main-38:/layout/item_topic.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-mergeDebugResources-35:/layout/activity_forgot_password.xml",
+        "source": "com.trang.kidsenglishai.app-main-38:/layout/activity_forgot_password.xml"
+    },
+    {
+        "merged": "com.trang.kidsenglishai.app-mergeDebugResources-35:/layout/activity_game_quiz.xml",
+        "source": "com.trang.kidsenglishai.app-main-38:/layout/activity_game_quiz.xml"
+    }
+]
